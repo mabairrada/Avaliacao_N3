@@ -31,8 +31,13 @@ public class Main {
                     }
                     try {
                         int valor = Integer.parseInt(input);
+                        
+                        long startTime = System.nanoTime();
                         raiz = inserir(raiz, valor);
-                        SaidaDados.exibirMensagem("Número adicionado com sucesso!");
+                        long endTime = System.nanoTime();
+                        long elapsedTime = endTime - startTime;
+                        
+                        SaidaDados.exibirMensagem("Número adicionado com sucesso!\nTempo de inserção: " + elapsedTime + " nanossegundos");
                     } catch (NumberFormatException ex) {
                         SaidaDados.exibirMensagem("Por favor, insira um número válido.");
                     }
@@ -44,8 +49,13 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 valoresEmOrdem.clear();
+                
+                long startTime = System.nanoTime();
                 listarEmOrdem(raiz);
-                String mensagem = "Números em ordem: " + valoresEmOrdem.toString();
+                long endTime = System.nanoTime();
+                long elapsedTime = endTime - startTime;
+                
+                String mensagem = "Números em ordem: " + valoresEmOrdem.toString() + "\nTempo de listagem: " + elapsedTime + " nanossegundos";
                 SaidaDados.exibirMensagem(mensagem);
             }
         });
