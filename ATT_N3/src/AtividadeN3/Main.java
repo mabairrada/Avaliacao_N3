@@ -24,11 +24,10 @@ public class Main {
         adicionarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Loop para inserir vários números
                 while (true) {
                     String input = JOptionPane.showInputDialog("Digite um número (ou clique em Cancelar para encerrar):");
                     if (input == null) {
-                        break; // O usuário clicou em Cancelar, sair do loop
+                        break; 
                     }
                     try {
                         int valor = Integer.parseInt(input);
